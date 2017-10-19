@@ -1,0 +1,154 @@
+html, body {
+	height: 100%;
+	max-height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	/*overflow: hidden;*/
+}
+* {
+	position: absolute;
+}
+
+#score, #gold, #score-text, #gold-text, #score-value, #gold-value {
+	top: 10px;
+	display: inline-block;
+	color: #fff;
+}
+
+#score-text, #gold-text {
+	margin-left: 20px;
+}
+
+#score-value, #gold-value {
+	margin-left: 70px;
+}
+
+#score {
+	left: 10px;
+}
+
+#gold {
+	left: 120px;
+}
+
+.enemy {
+	width: 30px;
+	height: 30px;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.bullet {
+	width: 5px;
+	height: 5px;
+	display: block;
+	position: absolute;
+}
+
+.bullet.arrow {
+	width: 10px;
+	background: brown;
+}
+
+.enemy.soldier {
+	background: green;
+}
+
+.enemy.monster {
+	background: blue;
+}
+
+.enemy.troll {
+	background: red;
+}
+
+.defender {
+	height: 20px;
+	width: 20px;
+	display: block;
+	position: absolute;
+}
+
+.defender.archer {
+	background: violet;
+}
+
+.defender.soldier {
+	background: purple;
+}
+
+.miner {
+	height: 20px;
+	width: 20px;
+	display: block;
+	position: absolute;
+}
+
+.miner.normal {
+	background: gold;
+}
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+	display: block;
+	overflow: hidden;
+}
+
+#tunnle {
+	width: 100%;
+	display: block;
+	position: absolute;
+}
+
+.castle	{
+    position: absolute;
+    width: 250px;
+    height: 142px;
+    top: 82px;
+    left: 280px;
+}
+
+.castle .wall {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	width: 32px;
+}
+
+.bg, .tunnle {
+	position: absolute;
+	max-width: 100%;
+	width: 100%;
+}
+
+.miner.normal.full-gold {
+	transition: all 0.3s linear;
+	transform: scale(1.1);
+	background: #fd3226;
+}
+
+.health-bar {
+	width: 100%;
+	height: 5px;
+	background: red;
+	box-shadow: 0px 0px 0px 1px #ccc inset;
+	margin-top: -10px;
+}
+
+.health-bar .fill {
+	width: calc(100% - 2px );
+	background: green;
+	display: block;
+	height: 3px;
+	margin-top: 1px;
+	margin-left: 1px;
+}
+
+.flash {
+	transition: all 0.25s linear;
+	background: white !important;
+}

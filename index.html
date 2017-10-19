@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="game.css">
+	<script src="jquery-3.2.1.min.js"></script>
+	<title>Game</title>
+</head>
+<body>
+	
+	<div id="wrapper" class="wrapper">
+		<img src="images/bg.png" class="bg">
+		<div id="score">
+			<span id="score-text">Score: </span>
+			<span id="score-value">0</span>
+		</div>
+		<div id="gold">
+			<span id="gold-text">Golds: </span>
+			<span id="gold-value">0</span>
+		</div>
+		<div id="tunnle">
+			<img src="images/tunnle.png" class="tunnle">
+
+			<div id="castle" class="castle">
+				<div id="wall" class="wall" data-level="1" data-health="2000">
+					<img src="images/wall.png" class="wall">
+					<div class="health-bar">
+						<span class="fill"></span>
+					</div>
+				</div>
+				<div class="tower"></div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+<div id="enemyObjects" style="display: none;">
+
+	<div class="enemy soldier" data-type="soldier" data-speed="0.75" data-damage="10" data-level="1" data-health="50">
+		<div class="health-bar">
+			<span class="fill"></span>
+		</div>
+	</div>
+
+	<div class="enemy troll" data-type="troll" data-speed="5" data-damage="10" data-level="1" data-health="100">
+		<div class="health-bar">
+			<span class="fill"></span>
+		</div>
+	</div>
+
+	<div class="enemy monster" data-type="monster" data-speed="1" data-damage="10" data-level="1" data-health="200">
+		<div class="health-bar">
+			<span class="fill"></span>
+		</div>
+	</div>
+</div>
+
+<div id="bulletObjects" style="display: none;">
+	<div class="bullet arrow" data-type="arrow" data-speed="20" data-width="10" data-damage="1" data-level="1"></div>
+</div>
+
+<div id="defenderObjects" style="display: none;">
+	<div class="defender archer" data-health="50" data-damage="20" data-level="1">
+	</div>
+	<div class="defender soldier" data-health="50" data-damage="2" data-level="1">
+		<div class="health-bar">
+			<span class="fill"></span>
+		</div>
+	</div>
+</div>
+
+<div id="minerObjects" style="display: none;">
+	<div class="miner normal" data-health="50" data-minerate="1" data-level="1" data-capacity="10" data-gold="0"></div>
+</div>
+
+<div id="wall-object" data-level="1" data-health="2000" style="display: none;">
+</div>
+
+</body>
+
+
+
+<script src="game.js"></script>
+
+</html>
