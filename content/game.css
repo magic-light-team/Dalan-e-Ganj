@@ -5,13 +5,13 @@ html, body {
 	margin: 0;
 	padding: 0;
 	font-family: mlnumbers;
-	cursor: url(images/mouse.png), auto;
+	cursor: url(content/images/mouse.png), auto;
 	overflow: hidden;
 }
 
 @font-face {
     font-family: mlnumbers;
-    src: url(fonts/numbers.ttf);
+    src: url(content/fonts/numbers.ttf);
 }
 
 * {
@@ -24,7 +24,7 @@ html, body {
   background: transparent;
 }
 body {
-	background: url(images/wallpaper.jpg) no-repeat;
+	background: url(content/images/wallpaper.jpg) no-repeat;
 	background-size: contain;
 }
 
@@ -157,21 +157,21 @@ body {
 }
 
 #start {
-	background-image: url(images/start.png);
+	background-image: url(content/images/start.png);
 	background-repeat: no-repeat;
 }
 #start.restart {
-	background-image: url(images/restart2.png);
+	background-image: url(content/images/restart2.png);
 	background-repeat: no-repeat;
 }
 
 body.win {
-	background-image: url(images/win.jpg);
+	background-image: url(content/images/win.jpg);
 	background-repeat: no-repeat;
 }
 
 body.game-over {
-	background-image: url(images/game-over.jpg);
+	background-image: url(content/images/game-over.jpg);
 	background-repeat: no-repeat;
 }
 
@@ -230,28 +230,28 @@ body.game-over {
 }
 
 #controls .block.archer-block {
-	background-image: url(images/unit/cards/archer1.png);
+	background-image: url(content/images/unit/cards/archer1.png);
 }
 #controls .block.miner-block {
-	background-image: url(images/unit/cards/miner1.png);
+	background-image: url(content/images/unit/cards/miner1.png);
 }
 #controls .block.swordsman-block {
-	background-image: url(images/unit/cards/swordsman1.png);
+	background-image: url(content/images/unit/cards/swordsman1.png);
 }
 #controls .block.maceman-block {
-	background-image: url(images/unit/cards/maceman1.png);
+	background-image: url(content/images/unit/cards/maceman1.png);
 }
 #controls .block.archer-block.high-level {
-	background-image: url(images/unit/cards/archer2.png);
+	background-image: url(content/images/unit/cards/archer2.png);
 }
 #controls .block.miner-block.high-level {
-	background-image: url(images/unit/cards/miner2.png);
+	background-image: url(content/images/unit/cards/miner2.png);
 }
 #controls .block.swordsman-block.high-level {
-	background-image: url(images/unit/cards/swordsman2.png);
+	background-image: url(content/images/unit/cards/swordsman2.png);
 }
 #controls .block.maceman-block.high-level {
-	background-image: url(images/unit/cards/maceman2.png);
+	background-image: url(content/images/unit/cards/maceman2.png);
 }
 
 #controls .block img {
@@ -304,7 +304,7 @@ body.game-over {
 
 
 #scoreboard {
-	background-image: url(images/scoreboard.png);
+	background-image: url(content/images/scoreboard.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 380px;
@@ -361,40 +361,40 @@ body.game-over {
 }
 
 .enemy.vacumer {
-	background-image: url(images/unit/vacumer.gif);
+	background-image: url(content/images/unit/vacumer.gif);
 	background-size: cover;
 	width: 65px;
 }
 .enemy.vacumer.flash {
-	background-image: url(images/unit/vacumer-w.png);
+	background-image: url(content/images/unit/vacumer-w.png);
 }
 .enemy.ghost {
-	background-image: url(images/unit/ghost.gif);
+	background-image: url(content/images/unit/ghost.gif);
 	background-size: cover;
 	width: 57px;
 }
 .enemy.ghost.flash {
-	background-image: url(images/unit/ghost-w.png);
+	background-image: url(content/images/unit/ghost-w.png);
 }
 
 .enemy.bat {
-	background-image: url(images/unit/bat.gif);
+	background-image: url(content/images/unit/bat.gif);
 	background-size: cover;
 	width: 71px;
 	height: 50px;
 }
 
 .enemy.bat.flash {
-	background-image: url(images/unit/bat-w.png);
+	background-image: url(content/images/unit/bat-w.png);
 }
 .enemy.demon {
-	background-image: url(images/unit/demon.png);
+	background-image: url(content/images/unit/demon.png);
 	background-size: cover;
 	width: 43px;
 }
 
 .enemy.demon.flash {
-	background-image: url(images/unit/demon-w.png);
+	background-image: url(content/images/unit/demon-w.png);
 }
 
 .defender {
@@ -405,30 +405,30 @@ body.game-over {
 
 .defender.archer {
 	width: 40px;
-	background-image: url(images/unit/archer.png);
+	background-image: url(content/images/unit/archer.png);
 	background-size: cover;
 }
 
 .defender.archer.high-level {
-	background-image: url(images/unit/archer2.png);
+	background-image: url(content/images/unit/archer2.png);
 }
 .defender.swordsman.high-level {
-	background-image: url(images/unit/swordsman2.png);
+	background-image: url(content/images/unit/swordsman2.png);
 }
 
 .defender.maceman.high-level {
-	background-image: url(images/unit/maceman2.png);
+	background-image: url(content/images/unit/maceman2.png);
 }
 
 .defender.swordsman {
 	width: 51px;
-	background-image: url(images/unit/swordsman.png);
+	background-image: url(content/images/unit/swordsman.png);
 	background-size: cover;
 }
 
 .defender.maceman {
 	width: 63px;
-	background-image: url(images/unit/maceman.png);
+	background-image: url(content/images/unit/maceman.png);
 	background-size: cover;
 }
 
@@ -440,23 +440,23 @@ body.game-over {
 }
 
 .miner.normal {
-	background-image: url(images/unit/miner1.png);
+	background-image: url(content/images/unit/miner1.png);
 	background-size: cover;
 	transform-origin: 50%;
 	animation: mine 1s infinite;
 }
 
 .miner.normal.high-level {
-	background-image: url(images/unit/miner2.png);
+	background-image: url(content/images/unit/miner2.png);
 }
 
 .miner.normal.full-gold.high-level {
-	background-image: url(images/unit/miner-f2.png);
+	background-image: url(content/images/unit/miner-f2.png);
 }
 
 .miner.normal.full-gold {
 	transition: background-image 0.3s linear;
-	background-image: url(images/unit/miner-f1.png);
+	background-image: url(content/images/unit/miner-f1.png);
 	background-size: cover;
 	animation: none;
 }
