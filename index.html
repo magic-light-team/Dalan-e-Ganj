@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="width: 1366px !important; height: 660px !important;">
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="game.css">
@@ -7,17 +7,25 @@
 	<title>Game</title>
 </head>
 <body>
-	
-	<div id="wrapper" class="wrapper">
+	<div id="start"></div>
+	<div id="wrapper" class="wrapper hide">
 		<img src="images/bg.png" class="bg">
-		<div id="score">
-			<span id="score-text">Score: </span>
-			<span id="score-value">0</span>
+		<div id="scoreboard">
+			<div id="score">
+				<span id="score-value">0</span>
+			</div>
+			<div id="gold">
+				<span id="gold-value">0</span>
+			</div>
 		</div>
-		<div id="gold">
-			<span id="gold-text">Golds: </span>
-			<span id="gold-value">0</span>
+		<div class="game-controls">
+			<div class="main-control">
+				<img src="images/pause.png" class="pause">
+				<img src="images/play.png" class="play">
+				<img src="images/restart.png" class="restart">
+			</div>
 		</div>
+		<div class="level-name">Level: <span>1</span></div>
 		<div id="tunnle">
 			<img src="images/tunnle.png" class="tunnle">
 
@@ -28,29 +36,100 @@
 						<span class="fill"></span>
 					</div>
 				</div>
-				<div class="tower"></div>
+				<div class="tower">
+					<img src="images/tower.png" class="tower-image">
+				</div>
 			</div>
 
 		</div>
 
+		<div class="levels">
+			<img src="images/lvl5.png" class="lvl5 hide">
+			<img src="images/lvl4.png" class="lvl4 hide">
+			<img src="images/lvl3.png" class="lvl3 hide">
+			<img src="images/lvl2.png" class="lvl2 hide">
+			<img src="images/lvl1.png" class="lvl1 hide">
+			<img src="images/gold-box.png" class="gold-box hide">
+		</div>
+
+		<div id="controls">
+			<div class="block miner-block">
+				<div class="btn upgrade">
+					<img src="images/upgrade.png">
+					<div class="upgrade-val">1</div>
+					<div class="level-num"><span class="text">lvl: </span><span class="value">1</span></div>
+				</div>
+				<!-- <img src="images/unit/miner1.png"> -->
+				<div class="num">1</div>
+				<div class="btn add">
+					<img src="images/add.png">
+					<div class="add-val">1</div>
+				</div>
+			</div>
+			<div class="block archer-block">
+				<div class="btn upgrade">
+					<img src="images/upgrade.png">
+					<div class="upgrade-val">1</div>
+					<div class="level-num"><span class="text">lvl: </span><span class="value">1</span></div>
+				</div>				
+				<!-- <img src="images/unit/archer.png"> -->
+				<div class="num">1</div>
+				<div class="btn add">
+					<img src="images/add.png">
+					<div class="add-val">1</div>
+				</div>				
+			</div>
+			<div class="block swordsman-block">
+				<div class="btn upgrade">
+					<img src="images/upgrade.png">
+					<div class="upgrade-val">1</div>
+					<div class="level-num"><span class="text">lvl: </span><span class="value">1</span></div>
+				</div>				
+				<!-- <img src="images/unit/swordsman.png"> -->
+				<div class="num">1</div>
+				<div class="btn add">
+					<img src="images/add.png">
+					<div class="add-val">1</div>
+				</div>
+			</div>
+
+			<div class="block maceman-block">
+				<div class="btn upgrade">
+					<img src="images/upgrade.png">
+					<div class="upgrade-val">1</div>
+					<div class="level-num"><span class="text">lvl: </span><span class="value">1</span></div>
+				</div>				
+				<!-- <img src="images/unit/maceman.png"> -->
+				<div class="num">1</div>
+				<div class="btn add">
+					<img src="images/add.png">
+					<div class="add-val">1</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 
 <div id="enemyObjects" style="display: none;">
 
-	<div class="enemy soldier" data-type="soldier" data-speed="0.75" data-damage="10" data-level="1" data-health="50">
+	<div class="enemy demon" data-type="demon" data-speed="0.75" data-damage="10" data-level="1" data-health="50">
 		<div class="health-bar">
 			<span class="fill"></span>
 		</div>
 	</div>
 
-	<div class="enemy troll" data-type="troll" data-speed="5" data-damage="10" data-level="1" data-health="100">
+	<div class="enemy bat" data-type="bat" data-speed="1" data-damage="10" data-level="1" data-health="100">
 		<div class="health-bar">
 			<span class="fill"></span>
 		</div>
 	</div>
 
-	<div class="enemy monster" data-type="monster" data-speed="1" data-damage="10" data-level="1" data-health="200">
+	<div class="enemy ghost" data-type="ghost" data-speed="0.3" data-damage="10" data-level="1" data-health="500">
+		<div class="health-bar">
+			<span class="fill"></span>
+		</div>
+	</div>
+	<div class="enemy vacumer" data-type="vacumer" data-speed="0.3" data-damage="10" data-level="1" data-health="500">
 		<div class="health-bar">
 			<span class="fill"></span>
 		</div>
@@ -58,13 +137,20 @@
 </div>
 
 <div id="bulletObjects" style="display: none;">
-	<div class="bullet arrow" data-type="arrow" data-speed="20" data-width="10" data-damage="1" data-level="1"></div>
+	<div class="bullet arrow" data-type="arrow" data-speed="10" data-width="10" data-damage="1" data-level="1">
+		<img src="images/unit/mat/arrow.png">
+	</div>
 </div>
 
 <div id="defenderObjects" style="display: none;">
 	<div class="defender archer" data-health="50" data-damage="20" data-level="1">
 	</div>
-	<div class="defender soldier" data-health="50" data-damage="2" data-level="1">
+	<div class="defender swordsman" data-health="50" data-damage="10" data-level="1">
+		<div class="health-bar">
+			<span class="fill"></span>
+		</div>
+	</div>
+	<div class="defender maceman" data-health="50" data-damage="5" data-level="1">
 		<div class="health-bar">
 			<span class="fill"></span>
 		</div>
@@ -72,11 +158,22 @@
 </div>
 
 <div id="minerObjects" style="display: none;">
-	<div class="miner normal" data-health="50" data-minerate="1" data-level="1" data-capacity="10" data-gold="0"></div>
+	<div class="miner normal" data-minerate="1" data-level="1" data-capacity="10" data-gold="0"></div>
 </div>
 
 <div id="wall-object" data-level="1" data-health="2000" style="display: none;">
 </div>
+
+<audio id="arrowshot" src="sound/arrowshot.wav" type="audio/ogg"/></audio>
+<audio id="castle-hit" src="sound/castle-hit.wav" type="audio/ogg"/></audio>
+<audio id="get-coin" src="sound/get-coin.wav" type="audio/ogg" /></audio>
+<audio id="level-up" src="sound/level-up.wav" type="audio/ogg"></audio>
+<audio id="unit-buy" src="sound/unit-buy.wav" type="audio/ogg"></audio>
+<audio id="wave-start" src="sound/wave-start.wav" type="audio/ogg"></audio>
+<audio id="win" src="sound/win.wav" type="audio/ogg"></audio>
+
+<audio id="Oil-Rig" src="sound/start/02. Oil Rig.mp3" type="audio/mp3" loop></audio>
+<audio id="Dungeon-Lords-Title"  src="sound/start/Dungeon Lords Title.mp3" type="audio/mp3" loop></audio>
 
 </body>
 

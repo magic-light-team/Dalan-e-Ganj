@@ -4,24 +4,329 @@ html, body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	/*overflow: hidden;*/
+	font-family: mlnumbers;
+	cursor: url(images/mouse.png), auto;
+	overflow: hidden;
 }
+
+@font-face {
+    font-family: mlnumbers;
+    src: url(fonts/numbers.ttf);
+}
+
 * {
 	position: absolute;
 }
-
-#score, #gold, #score-text, #gold-text, #score-value, #gold-value {
-	top: 10px;
-	display: inline-block;
-	color: #fff;
+::selection {
+  background: transparent;
+}
+::-moz-selection {
+  background: transparent;
+}
+body {
+	background: url(images/wallpaper.jpg) no-repeat;
+	background-size: contain;
 }
 
-#score-text, #gold-text {
-	margin-left: 20px;
+.hide {
+	opacity: 0;
+}
+.upgrade-val {
+	top: 6px;
+}
+.upgrade-val, .add-val {
+	font-size: 28px;
+    color: #fff;
+    left: 70px;
+}
+
+.levels .lvl5 {
+    width: 500px;
+    top: 193px;
+    left: -200px;
+}
+
+.levels .lvl4 {
+	width: 360px;
+    top: 280px;
+    left: -150px;
+}
+
+.levels .lvl3 {
+	width: 260px;
+    top: 350px;
+    left: -100px;
+}
+
+.levels .lvl2 {
+	width: 240px;
+    top: 418px;
+    left: -100px;
+}
+
+.levels .lvl1 {
+    width: 200px;
+    top: 480px;
+    left: -75px;
+}
+
+.levels.level1 .lvl1 {
+	top: 210px;
+}
+
+.levels.level2 .lvl1 {
+	top: 280px;
+}
+
+.levels.level3 .lvl1 {
+	top: 350px;
+}
+
+.levels.level4 .lvl1 {
+	top: 390px;
+}
+.levels {
+	pointer-events: none;
+}
+.levels.level5 .lvl1 {
+	top: 480px;
+}
+
+.levels.level5 .gold-box {
+    top: 495px;
+    width: 80px;
+    left: 0;
+}
+
+
+.levels.level2 .lvl2 {
+	top: 210px;
+}
+
+.levels.level3 .lvl2 {
+	top: 274px;
+}
+
+.levels.level4 .lvl2 {
+	top: 328px;
+}
+
+.levels.level5 .lvl2 {
+	top: 420px;
+}
+
+
+.levels.level3 .lvl3 {
+	top: 200px;
+}
+
+.levels.level4 .lvl3 {
+	top: 260px;
+}
+
+.levels.level5 .lvl3 {
+	top: 350px;
+}
+
+.levels.level4 .lvl4 {
+	top: 190px;
+}
+
+.levels.level5 .lvl4 {
+	top: 280px;
+}
+
+.levels.level5 .lvl5 {
+	top: 194px;
+}
+
+.add-val {
+ top: 10px;
+}
+
+#start {
+	display: block;
+	top: 80%;
+	left: 44%;
+	transform: translate(-50%, -50%);
+	background-size: cover;
+	width: 154px;
+	height: 50px;
+	z-index: 100;
+	cursor: pointer;
+}
+
+#start {
+	background-image: url(images/start.png);
+	background-repeat: no-repeat;
+}
+#start.restart {
+	background-image: url(images/restart2.png);
+	background-repeat: no-repeat;
+}
+
+body.win {
+	background-image: url(images/win.jpg);
+	background-repeat: no-repeat;
+}
+
+body.game-over {
+	background-image: url(images/game-over.jpg);
+	background-repeat: no-repeat;
+}
+
+.level-name {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 10px;
+	right: 0px;
+	margin: 0 auto;
+	font-size: 40px;
+	color: gold;
+	width: 170px;
+	text-align: center;
+}
+
+#controls {
+	position: relative;
+	top: 50%;
+	float: right;
+	width: 600px;
+	height: 300px;
+}
+
+.game-controls .main-control {
+	left: 384px;
+    height: 67px;
+    display: block;
+    cursor: pointer;
+}
+
+.game-controls .main-control img {
+	height: 100%;
+	display: inline-block;
+}
+
+.game-controls .main-control .play,
+.game-controls .main-control .restart {
+	display: none;
+}
+
+.game-controls .main-control .restart {
+	left: 76px;
+}
+
+#controls .block {
+	text-align: center;
+	padding: 15px;
+	display: inline-block;
+	width: 78px;
+	height: 110px;
+	background-size: cover;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#controls .block.archer-block {
+	background-image: url(images/unit/cards/archer1.png);
+}
+#controls .block.miner-block {
+	background-image: url(images/unit/cards/miner1.png);
+}
+#controls .block.swordsman-block {
+	background-image: url(images/unit/cards/swordsman1.png);
+}
+#controls .block.maceman-block {
+	background-image: url(images/unit/cards/maceman1.png);
+}
+#controls .block.archer-block.high-level {
+	background-image: url(images/unit/cards/archer2.png);
+}
+#controls .block.miner-block.high-level {
+	background-image: url(images/unit/cards/miner2.png);
+}
+#controls .block.swordsman-block.high-level {
+	background-image: url(images/unit/cards/swordsman2.png);
+}
+#controls .block.maceman-block.high-level {
+	background-image: url(images/unit/cards/maceman2.png);
+}
+
+#controls .block img {
+	display: block;
+	max-width: 55px;
+	position: relative;
+	left: 0;
+}
+
+#controls .block .level-num,
+#controls .block .num {
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width: 78px;
+    text-shadow: 2px 2px 8px #444444;
+}
+
+#controls .block .num {
+	bottom: 10px;
+}
+
+#controls .block .level-num .text,
+#controls .block .level-num .value {
+	position: relative;
+}
+#controls .block .level-num .text{
+	font-family: tahoma;
+	font-size: 20px;
+}
+#controls .block .level-num {
+	top: 47px;
+}
+
+#controls .block .btn.upgrade,
+#controls .block .btn.add {
+	left: 0;
+	right: 0;
+}
+
+#controls .block .btn.upgrade {
+	top: -40px;
+}
+
+#controls .block .btn.add {
+	top: 147px;
+}
+
+
+#scoreboard {
+	background-image: url(images/scoreboard.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 380px;
+	height: 67px;
+
 }
 
 #score-value, #gold-value {
-	margin-left: 70px;
+	top: 15px;
+	font-size: 40px;
+	color: gold;
+}
+
+#score-value {
+	margin-left: 25px;
+}
+
+
+
+
+#gold-value {
+	margin-left: 100px;
 }
 
 #score {
@@ -33,8 +338,7 @@ html, body {
 }
 
 .enemy {
-	width: 30px;
-	height: 30px;
+	height: 40px;
 	display: block;
 	position: absolute;
 	bottom: 0;
@@ -42,53 +346,123 @@ html, body {
 }
 
 .bullet {
-	width: 5px;
-	height: 5px;
 	display: block;
 	position: absolute;
 }
 
 .bullet.arrow {
 	width: 10px;
-	background: brown;
 }
 
-.enemy.soldier {
-	background: green;
+.bullet.arrow img {
+	height: 8px;
+	width: 54px;
+	max-width: 100%;
 }
 
-.enemy.monster {
-	background: blue;
+.enemy.vacumer {
+	background-image: url(images/unit/vacumer.gif);
+	background-size: cover;
+	width: 65px;
+}
+.enemy.vacumer.flash {
+	background-image: url(images/unit/vacumer-w.png);
+}
+.enemy.ghost {
+	background-image: url(images/unit/ghost.gif);
+	background-size: cover;
+	width: 57px;
+}
+.enemy.ghost.flash {
+	background-image: url(images/unit/ghost-w.png);
 }
 
-.enemy.troll {
-	background: red;
+.enemy.bat {
+	background-image: url(images/unit/bat.gif);
+	background-size: cover;
+	width: 71px;
+	height: 50px;
+}
+
+.enemy.bat.flash {
+	background-image: url(images/unit/bat-w.png);
+}
+.enemy.demon {
+	background-image: url(images/unit/demon.png);
+	background-size: cover;
+	width: 43px;
+}
+
+.enemy.demon.flash {
+	background-image: url(images/unit/demon-w.png);
 }
 
 .defender {
-	height: 20px;
-	width: 20px;
+	height: 40px;
 	display: block;
 	position: absolute;
 }
 
 .defender.archer {
-	background: violet;
+	width: 40px;
+	background-image: url(images/unit/archer.png);
+	background-size: cover;
 }
 
-.defender.soldier {
-	background: purple;
+.defender.archer.high-level {
+	background-image: url(images/unit/archer2.png);
+}
+.defender.swordsman.high-level {
+	background-image: url(images/unit/swordsman2.png);
+}
+
+.defender.maceman.high-level {
+	background-image: url(images/unit/maceman2.png);
+}
+
+.defender.swordsman {
+	width: 51px;
+	background-image: url(images/unit/swordsman.png);
+	background-size: cover;
+}
+
+.defender.maceman {
+	width: 63px;
+	background-image: url(images/unit/maceman.png);
+	background-size: cover;
 }
 
 .miner {
-	height: 20px;
-	width: 20px;
+	height: 40px;
+	width: 51px;
 	display: block;
 	position: absolute;
 }
 
 .miner.normal {
-	background: gold;
+	background-image: url(images/unit/miner1.png);
+	background-size: cover;
+	transform-origin: 50%;
+	animation: mine 1s infinite;
+}
+
+.miner.normal.high-level {
+	background-image: url(images/unit/miner2.png);
+}
+
+.miner.normal.full-gold.high-level {
+	background-image: url(images/unit/miner-f2.png);
+}
+
+.miner.normal.full-gold {
+	transition: background-image 0.3s linear;
+	background-image: url(images/unit/miner-f1.png);
+	background-size: cover;
+	animation: none;
+}
+
+.miner.normal.paused {
+	animation: none;
 }
 
 .wrapper {
@@ -102,13 +476,14 @@ html, body {
 	width: 100%;
 	display: block;
 	position: absolute;
+	pointer-events: none;
 }
 
 .castle	{
     position: absolute;
     width: 250px;
-    height: 142px;
-    top: 82px;
+    height: 170px;
+    top: 78px;
     left: 280px;
 }
 
@@ -116,7 +491,18 @@ html, body {
 	position: absolute;
 	right: 0;
 	height: 100%;
-	width: 32px;
+	width: 38px;
+}
+
+.castle .tower {
+	display: block;
+    height: 130px;
+    left: 38px;
+    top: 38px;
+}
+
+.castle .tower-image {
+	height: 100%;
 }
 
 .bg, .tunnle {
@@ -125,11 +511,7 @@ html, body {
 	width: 100%;
 }
 
-.miner.normal.full-gold {
-	transition: all 0.3s linear;
-	transform: scale(1.1);
-	background: #fd3226;
-}
+
 
 .health-bar {
 	width: 100%;
@@ -137,6 +519,7 @@ html, body {
 	background: red;
 	box-shadow: 0px 0px 0px 1px #ccc inset;
 	margin-top: -10px;
+	z-index: 9;
 }
 
 .health-bar .fill {
@@ -149,6 +532,15 @@ html, body {
 }
 
 .flash {
-	transition: all 0.25s linear;
-	background: white !important;
+	transition: background 0.15s linear;
+}
+
+@keyframes mine {
+  from {
+    transform: rotate(-10deg);
+  }
+
+  to {
+	transform: rotate(20deg);
+  }
 }
