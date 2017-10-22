@@ -202,12 +202,6 @@ body.game-over {
     display: block;
     cursor: pointer;
 }
-.game-controls .right-control {
-	left: 384px;
-    height: 67px;
-    display: block;
-    cursor: pointer;
-}
 
 .game-controls .main-control img {
 	height: 100%;
@@ -223,6 +217,15 @@ body.game-over {
 	left: 76px;
 }
 
+.game-extra{
+	top:80%;
+}
+.game-extra .story{
+	left:5px;
+}
+.game-extra .hint{
+	left:85px;
+}
 #controls .block {
 	text-align: center;
 	padding: 15px;
@@ -549,4 +552,10 @@ body.game-over {
   to {
 	transform: rotate(20deg);
   }
+}
+
+.btn.upgrade img,
+.btn.add img,
+.game-extra img{
+	cursor: pointer;
 }

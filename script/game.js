@@ -89,8 +89,6 @@ jQuery(document).ready(function($) {
 			$('#wrapper').removeClass('hide');
 			$('body').removeClass('game-over');
 			$('body').removeClass('win');
-			//show story
-			//show hint
 			init();
 		}
 	});
