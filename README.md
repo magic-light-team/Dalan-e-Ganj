@@ -12,8 +12,8 @@
 - [ ] add maceman attack animation
 - [ ] add archer attack animation
 ## play game
-* [orginal game] (https://wp-code.ir/game)
-* [this version] (https://mohsen12999.github.io/Dalan-e-Ganj/)
+- [orginal game] (https://wp-code.ir/game)
+- [this version] (https://mohsen12999.github.io/Dalan-e-Ganj/)
 ## Installation
 no need to install, only run index.html or open the site.
 ## History
