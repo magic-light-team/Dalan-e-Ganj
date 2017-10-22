@@ -2,9 +2,11 @@
 ## TODO
 - [ ] add story of game in start
 - [ ] add help in start
-- [ ] add story & help button
+- [x] add story & help butto
+- [ ] better hover animation for keys
+- [ ] better button for story & help butto
 - [ ] miner animation
-- [ ] add waves
+- [x] add waves
 ## play game
 * https://wp-code.ir/game
 ## Installation
