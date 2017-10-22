@@ -9,6 +9,7 @@
 - [x] add waves
 ## play game
 * https://wp-code.ir/game
+* https://mohsen12999.github.io/Dalan-e-Ganj/
 ## Installation
 no need to install, only run undex.html or open the site.
 ## History
