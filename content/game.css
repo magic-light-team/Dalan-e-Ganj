@@ -175,7 +175,7 @@ body.game-over {
 	background-repeat: no-repeat;
 }
 
-.level-name {
+.level-desc {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -184,8 +184,11 @@ body.game-over {
 	margin: 0 auto;
 	font-size: 40px;
 	color: gold;
-	width: 170px;
+	width: 320px;
 	text-align: center;
+}
+.level-desc span{
+	position: relative;
 }
 
 #controls {

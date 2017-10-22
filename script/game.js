@@ -23,6 +23,9 @@ jQuery(document).ready(function($) {
 	var level             = 1;
 	var levelDamage       = 3;
 	var remainLevel       = 0;
+	var totalEnemyDamage  = 0;
+	var inWaveLevel			  = 0;
+
 	var archerRange       = 400;
 	var castleOffset      = $('#castle').offset();
 	var castleY           = castleOffset.left + $('#castle').width() + 5;
@@ -94,16 +97,17 @@ jQuery(document).ready(function($) {
 	});
 
 	function init() {
-		gameIsRunning = 1;
-		level         = 1;
-		levelDamage   = 3;
-		totalGold     = 0;
-		minedGold     = 0;
-		score         = 0;
-		enemyID       = 1;
-		bulletID      = 1;
-		defenderID    = 1;
-		minerID       = 1;
+		gameIsRunning	 = 1;
+		level        	 = 1;
+		levelDamage  	 = 10;
+		totalEnemyDamage = 0;
+		totalGold    	 = 0;
+		minedGold    	 = 0;
+		score        	 = 0;
+		enemyID      	 = 1;
+		bulletID     	 = 1;
+		defenderID    	 = 1;
+		minerID   	     = 1;
 		archerValue      = 20;
 		minerValue       = 5;
 		swordsmanValue   = 10;
@@ -502,11 +506,12 @@ jQuery(document).ready(function($) {
 		minerID++;
 	}
 
-	function generateEnemy() {
+	function generateEnemy(norm = 1) {
 		
-	    var levelTotalDamage = levelDamage * level;
-	    levelTotalDamage -= remainLevel;
-	    while(levelTotalDamage>0){
+		var levelTotalDamagePerSec = levelDamage * level * norm;
+		
+	    levelTotalDamagePerSec -= remainLevel;
+	    while( levelTotalDamagePerSec > 0 ){
 
 			var enemyTypeNumber = enemyTypes.length;
 			if(level<enemyTypes.length){
@@ -521,11 +526,24 @@ jQuery(document).ready(function($) {
 		    }else{
 		        addEnemy( enemy, 420+randomNum, 0 );
 		    }
-		    
-		    levelTotalDamage -= $('#enemyObjects .enemy.' + enemy ).data('damage');
+			
+			var enemyDamage = $('#enemyObjects .enemy.' + enemy ).data('damage')
+			levelTotalDamagePerSec -= enemyDamage;
+
+			if( inWaveLevel === 0 ) {
+				var enemyHealth = $('#enemyObjects .enemy.' + enemy ).data('health')
+				totalEnemyDamage += enemyHealth; //do not count for wave
+			}
+
+			if( totalEnemyDamage > level * level * 2000 ){
+					level += 1;
+					$('.level-desc .level-num').text(level);
+					//Start Wave
+					inWaveLevel = 1;
+			}
 
 		}
-		remainLevel = -1 * levelTotalDamage;
+		remainLevel = -1 * levelTotalDamagePerSec;
 	}
 
 	function archerAttack( archerAtCastle, enemyAtRange, enemyIndex ) {
@@ -634,9 +652,9 @@ jQuery(document).ready(function($) {
 					gameOver();
 				}
 				if ( percent < 30 ) {
-					oldSRC = 'images/wall-crack.png';
+					oldSRC = 'content/images/wall-crack.png';
 				}
-				$('#wall img').attr('src', 'images/wall-w.png');
+				$('#wall img').attr('src', 'content/images/wall-w.png');
 				setTimeout(function() {
 					$('#wall img').attr( 'src', oldSRC );
 				}, 100);
@@ -688,10 +706,10 @@ jQuery(document).ready(function($) {
 					swordsmanCount--;
 				}
 				score = score + $('#enemyObjects .enemy.' + type ).data('health');
-				if(score>level*level*2000){
+				/*if(score>level*level*2000){
 					level += 1;
 					$('.level-name span').text(level);
-				}
+				}*/
 				$('#score-value').text(score);
 			}
 		});
@@ -716,7 +734,36 @@ jQuery(document).ready(function($) {
 		if ( gameIsRunning ) {
 			mine();
 			attack();
-			generateEnemy();
+
+			if( inWaveLevel === 0 ){
+				generateEnemy();
+			}else if ( inWaveLevel ===1 ){
+				//wait until clear ground
+				var enemyCount = $('#wrapper .enemy').length;
+				//if enemyNumber ===0 ==> show wave ,inWaveLevel=2
+				$('.level-desc .level-name').text('Ready  For  wave');
+				if( enemyCount === 0){
+					//show start Wave
+					$('.level-desc .level-name').text('Wave  level ');
+					inWaveLevel = 2;//end wave
+				}
+			}else if ( inWaveLevel >1 && inWaveLevel <10 ){
+				//make wave
+				//generateEnemy(10) for 7 sec;
+				generateEnemy(3);
+				inWaveLevel += 1;
+			}else{ 
+				//clear Wave
+				var enemyCount = $('#wrapper .enemy').length;
+				//if enemyNumber ===0 ==> show wave ,inWaveLevel=0
+				$('.level-desc .level-name').text('All Wave ');
+				if( enemyCount === 0){
+					//show end Wave
+					$('.level-desc .level-name').text('Level:');
+					inWaveLevel = 0;//end wave
+				}
+				
+			}
 		}	
 	}, 1000);
 	// Attack
