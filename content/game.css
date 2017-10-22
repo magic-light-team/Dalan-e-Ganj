@@ -559,3 +559,15 @@ body.game-over {
 .game-extra img{
 	cursor: pointer;
 }
+.btn.upgrade img:hover,
+.btn.add img:hover{
+	box-shadow: -1px -2px 0px gray inset; 
+}
+.game-extra img,
+.main-control img{
+	transition: 2s;
+}
+.game-extra img:hover,
+.main-control img:hover{
+	transform: rotate(360deg); 
+}
