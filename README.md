@@ -4,6 +4,7 @@
 - [ ] add help in start
 - [ ] add story & help button
 - [ ] miner animation
+- [ ] button hover
 - [ ] add waves
 ## play game
 * https://wp-code.ir/game

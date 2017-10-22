@@ -202,6 +202,12 @@ body.game-over {
     display: block;
     cursor: pointer;
 }
+.game-controls .right-control {
+	left: 384px;
+    height: 67px;
+    display: block;
+    cursor: pointer;
+}
 
 .game-controls .main-control img {
 	height: 100%;
