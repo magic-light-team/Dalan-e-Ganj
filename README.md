@@ -7,6 +7,10 @@
 - [ ] better button for story & help butto
 - [ ] miner animation
 - [x] add waves
+- [ ] add maceman attack function
+- [ ] add soldier attack animation
+- [ ] add maceman attack animation
+- [ ] add archer attack animation
 ## play game
 * https://wp-code.ir/game
 * https://mohsen12999.github.io/Dalan-e-Ganj/
