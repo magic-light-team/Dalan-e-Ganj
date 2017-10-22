@@ -507,7 +507,14 @@ jQuery(document).ready(function($) {
 	    var levelTotalDamage = levelDamage * level;
 	    levelTotalDamage -= remainLevel;
 	    while(levelTotalDamage>0){
-		    var enemy = enemyTypes[Math.floor(Math.random() * enemyTypes.length)];
+
+			var enemyTypeNumber = enemyTypes.length;
+			if(level<enemyTypes.length){
+				enemyTypeNumber = level;
+			}//encrease enemy type by level
+			
+			var enemy = enemyTypes[Math.floor(Math.random() * enemyTypeNumber)];
+			
 		    var randomNum = Math.floor( 50*Math.random(50)-25);
 		    if(enemy==='bat'){
 		        addEnemy( enemy, 520+randomNum, 0 );
