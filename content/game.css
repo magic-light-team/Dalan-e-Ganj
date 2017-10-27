@@ -175,7 +175,7 @@ body.game-over {
 	background-repeat: no-repeat;
 }
 
-.level-name {
+.level-desc {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -184,8 +184,11 @@ body.game-over {
 	margin: 0 auto;
 	font-size: 40px;
 	color: gold;
-	width: 170px;
+	width: 320px;
 	text-align: center;
+}
+.level-desc span{
+	position: relative;
 }
 
 #controls {
@@ -217,6 +220,15 @@ body.game-over {
 	left: 76px;
 }
 
+.game-extra{
+	top:80%;
+}
+.game-extra .story{
+	left:5px;
+}
+.game-extra .hint{
+	left:85px;
+}
 #controls .block {
 	text-align: center;
 	padding: 15px;
@@ -543,4 +555,22 @@ body.game-over {
   to {
 	transform: rotate(20deg);
   }
+}
+
+.btn.upgrade img,
+.btn.add img,
+.game-extra img{
+	cursor: pointer;
+}
+.btn.upgrade img:hover,
+.btn.add img:hover{
+	box-shadow: -1px -2px 0px gray inset; 
+}
+.game-extra img,
+.main-control img{
+	transition: 2s;
+}
+.game-extra img:hover,
+.main-control img:hover{
+	transform: rotate(360deg); 
 }
