@@ -4,13 +4,16 @@
 - [ ] add help in start
 - [x] add story & help butto
 - [ ] better hover animation for keys
-- [ ] better button for story & help butto
+- [ ] better button for story & help button
 - [ ] miner animation
 - [x] add waves
 - [ ] add maceman attack function
+- [ ] add maceman damage function
 - [ ] add soldier attack animation
 - [ ] add maceman attack animation
 - [ ] add archer attack animation
+- [ ] fix bug insert place of miner
+- [ ] fix bug choose enemy to attack
 ## play game
 - [orginal game](https://wp-code.ir/game)
 - [this version](https://mohsen12999.github.io/Dalan-e-Ganj/)
