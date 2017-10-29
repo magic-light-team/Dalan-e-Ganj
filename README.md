@@ -1,4 +1,4 @@
-#Dalan-e-Ganj
+# Dalan-e-Ganj
 ## play game
 - [orginal game](https://wp-code.ir/game)
 - [this vertion of Game](https://magic-light-team.github.io/Dalan-e-Ganj/)
