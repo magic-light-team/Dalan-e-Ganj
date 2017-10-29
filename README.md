@@ -9,7 +9,7 @@ no need to install, only run index.html or open the site.
 this project comes from our game-jam game project.
 ## Credits
 * Hosein Farahani
-* Amir Arsalan Hoseini
+* Amir Salar Soleymani
 * Mohsen Shabanian
 ## License
 * @magic game light
