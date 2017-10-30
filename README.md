@@ -13,7 +13,11 @@
 - [ ] add maceman attack animation
 - [ ] add archer attack animation
 - [ ] fix bug insert place of miner
+- [ ] fix bug insert place of soldier
 - [ ] fix bug choose enemy to attack
+- [ ] add blood effect
+- [ ] add torch
+- [ ] gold sign in score
 ## play game
 - [orginal game](https://wp-code.ir/game)
 - [this version](https://mohsen12999.github.io/Dalan-e-Ganj/)
