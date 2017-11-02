@@ -221,7 +221,7 @@ body.game-over {
 }
 
 .game-extra{
-	top:80%;
+	top:88%;
 }
 .game-extra .story{
 	left:5px;
@@ -561,16 +561,23 @@ body.game-over {
 .btn.add img,
 .game-extra img{
 	cursor: pointer;
+	opacity: 0.7;
+	transition: 0.5s;
 }
 .btn.upgrade img:hover,
 .btn.add img:hover{
 	box-shadow: -1px -2px 0px gray inset; 
+	transform: scale(1.1); 
+	opacity: 1;
 }
 .game-extra img,
 .main-control img{
-	transition: 2s;
+	transition: 0.5s;
+	opacity: 0.7;
 }
 .game-extra img:hover,
 .main-control img:hover{
-	transform: rotate(360deg); 
+	z-index: 2;
+	transform: scale(1.1); 
+	opacity: 1;
 }
